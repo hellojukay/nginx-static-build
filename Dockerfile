@@ -3,7 +3,7 @@ ADD sources.list /etc/apt/
 RUN apt-get update  -y && apt-get install  wget libxslt1-dev libxml2-dev zlib1g-dev libpcre3-dev libbz2-dev libssl-dev make -y
 WORKDIR /tmp/
 COPY nginx-1.22.0.tar.gz /tmp/nginx-1.22.0.tar.gz
-COPY openssl-1.0.2.tar.gz /tmp/
+COPY openssl-1.0.1g.tar.gz /tmp/
 COPY nginx-module-vts.tar.gz /tmp/nginx-module-vts.tar.gz
 RUN tar -xf nginx-module-vts.tar.gz && tar -xf nginx-1.22.0.tar.gz && cd nginx-1.22.0 && cp ../openssl-* . && tar xf openssl-* && ./configure  \
             --conf-path=/etc/nginx/nginx.conf  --prefix=/usr/share/nginx \
@@ -20,7 +20,7 @@ RUN tar -xf nginx-module-vts.tar.gz && tar -xf nginx-1.22.0.tar.gz && cd nginx-1
             --with-http_gzip_static_module --with-http_auth_request_module \
             --with-http_random_index_module --with-http_secure_link_module \
             --with-http_degradation_module --with-http_stub_status_module \
-            --with-mail --with-mail_ssl_module --with-openssl=./openssl-* \
+            --with-mail --with-mail_ssl_module --with-openssl=./openssl-1.0.1g\
             --add-module=/tmp/nginx-module-vts-master && make -j1 && cp objs/nginx /bin/ -f
 
 
