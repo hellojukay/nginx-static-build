@@ -16,7 +16,7 @@ jobs:
         tar -xf nginx-1.22.0.tar.gz
         cd nginx-1.22.0
         wget https://www.openssl.org/source/old/1.0.2/openssl-1.0.2k.tar.gz
-        tar -xf openssl-1.0.2k
+        tar -xf openssl-1.0.2k.tar.gz
 
         ./configure  \
             --conf-path=/etc/nginx/nginx.conf  --prefix=/usr/share/nginx \
