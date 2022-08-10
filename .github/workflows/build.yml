@@ -3,17 +3,17 @@ name: build
 on: [push]
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: build
       run: |
-        apt-get update  -y && apt-get install  wget libxslt1-dev libxml2-dev zlib1g-dev libpcre3-dev libbz2-dev libssl-dev make -y
+        sudo apt-get update  -y && apt-get install  wget libxslt1-dev libxml2-dev zlib1g-dev libpcre3-dev libbz2-dev libssl-dev make -y
         tar -xf nginx-module-vts.tar.gz
         #wget http://nginx.org/download/nginx-1.22.0.tar.gz
         tar -xf nginx-1.22.0.tar.gz
-        cd nginx-1.2.2.0/
+        cd nginx-1.22.0
         wget https://www.openssl.org/source/old/1.0.2/openssl-1.0.2k.tar.gz
         tar -xf openssl-1.0.2k
 
