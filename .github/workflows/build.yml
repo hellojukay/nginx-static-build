@@ -16,7 +16,7 @@ jobs:
         #wget http://nginx.org/download/nginx-1.22.0.tar.gz
         tar -xf nginx-1.22.0.tar.gz
         cd nginx-1.22.0
-        wget https://www.openssl.org/source/old/1.0.2/openssl-1.0.1g.tar.gz
+        wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1g.tar.gz
         tar -xf openssl-1.0.1g.tar.gz
 
         ./configure  \
