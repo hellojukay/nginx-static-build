@@ -6,3 +6,4 @@
 ```
 bash build.sh
 ```
+到 [release](https://github.com/hellojukay/nginx-static-build/releases)页面下载
